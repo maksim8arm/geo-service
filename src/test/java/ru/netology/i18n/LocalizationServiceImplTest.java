@@ -1,12 +1,13 @@
+package ru.netology.i18n;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.entity.Country;
-import ru.netology.i18n.LocalizationService;
-import ru.netology.i18n.LocalizationServiceImpl;
 
-public class LocalizationServicelmplTest {
+class LocalizationServiceImplTest {
+
     @Test
-    void LocalCountryTest() {
+    void checkLocaleRus() {
 
         LocalizationService localizationService = new LocalizationServiceImpl();
         String actual = localizationService.locale(Country.RUSSIA);
@@ -14,4 +15,15 @@ public class LocalizationServicelmplTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
+    @Test
+    void checkLocaleUs() {
+
+        LocalizationService localizationService = new LocalizationServiceImpl();
+        String actual = localizationService.locale(Country.USA);
+        String expected = "Welcome";
+        Assertions.assertEquals(expected, actual);
+
+    }
+
 }
